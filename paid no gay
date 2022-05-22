@@ -148,13 +148,15 @@ Section:NewToggle("Auto farm haki + hop", "", function(rgnhytm)
     _G.HakiHop = rgnhytm
 end)
 
-Section:NewToggle("Auto farm light (0 FPS)", "", function(wrbgtenrhm)
-_G.Lightkill = wrbgtenrhm
+Section:NewButton("Light auto farm", "", function()
+_G.Lightkill = true
 
 
+spawn(function()
+    while wait() do
+    pcall(function()    
         if _G.Lightkill then
             repeat
-                wait(0.5)
                 script = game:GetService("Players").LocalPlayer.Character.Powers.Light;
 VTC = script.RemoteEvent.RemoteFunction:InvokeServer();
 local pla = game.Players.LocalPlayer;
@@ -199,7 +201,9 @@ end
 end
 until _G.Lightkill == false
 end
-
+end)
+end
+end)
 end)
 
 Section:NewButton("Boost fps", "", function()
