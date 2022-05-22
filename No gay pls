@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("One Piece: Legendary X Trash Hub", "DarkTheme")
+local Window = Library.CreateLib("ꀎ Hub", "DarkTheme")
 local Tab = Window:NewTab("Auto farm")
 local Section = Tab:NewSection("Auto farm")
 
