@@ -613,7 +613,7 @@ if v.Name ~= "SetInstances" then
                         v.Humanoid:ChangeState(11)
                         v.HumanoidRootPart.CanCollide = false
                         v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,0,10)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,0,4)
     
 if v.Humanoid.Health == 0 then
         v:Destroy()
@@ -660,7 +660,7 @@ if v.Humanoid.MaxHealth <= 2000 then
             v.Humanoid:ChangeState(11)
                         v.HumanoidRootPart.CanCollide = false
                         v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,0,10)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,0,4)
     
 if v.Humanoid.Health == 0 then
         v:Destroy()
