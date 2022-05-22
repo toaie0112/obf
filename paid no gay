@@ -330,6 +330,31 @@ Section:NewToggle("Auto Respawn", "", function(symym)
     _G.Autorespawn = symym
 end)
 
+
+Section:NewButton("No water damage", "", function()
+local Players = game:GetService("Players")
+    local cache = {}
+    function lol(name)
+        if cache[name] then return cache[name] end
+        local player = Players:FindFirstChild(name)
+        if player then
+            cache[name] = player.UserId
+            return player.UserId
+        end 
+    
+        local id
+        pcall(function ()
+            id = Players:lol(name)
+        end)
+        cache[name] = id
+        return id
+    end
+    local ehh = game.Players.LocalPlayer.Name
+    local Final = lol(ehh)
+    game.Workspace.UserData["User_"..Final].Data["DevilFruit"].Value = "None"
+    game.Workspace.UserData["User_"..Final].Data["DevilFruit2"].Value = "None"
+end)
+
 local Tab = Window:NewTab("Setting")
 local Section = Tab:NewSection("Soon .....")
 
