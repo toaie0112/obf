@@ -89,9 +89,6 @@ game:GetService("Workspace").fuck.CFrame = CFrame.new(-477.8727111816406, math.r
 
 Section:NewToggle("Auto farm all stats (safe mode)", "", function(uymyky)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").fuck.CFrame * CFrame.new(0,10,0)
-for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
-    v:Destroy()
-end
 _G.Autoallstats = uymyky
 end)
 
@@ -354,82 +351,41 @@ end)
 spawn(function()
     while wait() do
     pcall(function()
-        if _G.Autoallstats == true then
-for y,u in pairs(game:GetService("Workspace").Barrels.Barrels:GetChildren()) do
-                fireclickdetector(u.ClickDetector)
-end
-for o,p in pairs(game:GetService("Workspace"):GetChildren()) do
-                if p.Name == 'Pumpkin' then
-                    p.Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-                elseif p.Name == 'Cantaloupe' then
-                    p.Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-                elseif p.Name == 'Banana' then
-                    p.Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-                elseif p.Name == 'Apple' then
-                    p.Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-                elseif p.Name == 'Melon' then
-                p.Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-                elseif p.Name == 'Green Apple' then
-                    p.Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-                elseif p.Name == 'Coconut' then
-            p.Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-                end
-            end
-for i,v in pairs(game:GetService("Workspace").Island8.Kitchen:GetChildren()) do
-    for i2,v2 in pairs(v:GetChildren()) do
-        for i3,v3 in pairs(v2:GetChildren()) do
-            if v3.Name == 'Mixer1' then
-            fireclickdetector(v3.ClickDetector)
-            end
-        end
-    end
-end
+        if _G.Autoallstats then
+plr = game.Players.LocalPlayer
+                                            for i,v in pairs(game:GetService("Workspace").Barrels.Crates:GetDescendants()) do
+                                                if v:IsA("ClickDetector") then
+                                                fireclickdetector(v)
+                                                end
+                                            end
+                                            
+                                            for i,v in pairs(game:GetService("Workspace").Barrels:GetDescendants()) do
+                                                if v:IsA("ClickDetector") then
+                                                fireclickdetector(v)
+                                                end
+                                            end
+                                            
+                                            for i,v in pairs(game.Workspace:GetChildren()) do 
+                                                if v.ClassName == "Tool" then
+                                                    game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+                                                end
+                                            end
+                
+                                            wait()
+                                            for i,v in pairs(game:GetService("Workspace").Island8.Kitchen:GetDescendants()) do
+                                                if v:IsA("ClickDetector") then
+                                                fireclickdetector(v)
+                                                end
+                                            end
 
-for g,h in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
-if h.Name == "Crab Toy" then
-h:Destroy()
-end
-if h.Name == "Uncommon Box" then
-    
-elseif h.Name == "Common Box" then
-    
-elseif h.Name == "Ultra Rare Box" then
-    
-elseif h.Name == "Rare Box" then
-    
-    elseif h.Name == 'Apple' then
-                
-            elseif h.Name == 'Melon' then
-                
-            elseif h.Name == 'Coconut' then
-                
-            elseif h.Name == 'Banana' then
-                
-            elseif h.Name == 'Cantaloupe' then
-                
-            elseif h.Name == 'Pumpkin' then
-            
-            elseif h.Name == 'Apple' then
-            
-            elseif h.Name == 'Green Apple' then
-            
-            elseif h.Name == 'Melee' then
-                
-            elseif h.Name == 'Krizma' then
-            
-            elseif h.Name == 'Wood Rod' then
-            
-            elseif h.Name == 'Slingshot' then
-    
-            elseif h.Name == 'Crab Toy' then
-            
-else
-game.Players.LocalPlayer.Character.Humanoid:EquipTool(h)
-end
+for a,h in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                    if h:IsA("Tool") and string.find(h.Name, "Juice") or string.find(h.Name, "Milk") or string.find(h.Name, "Cider") or string.find(h.Name, "Lemonade") or string.find(h.Name, "Smoothie") or string.find(h.Name, "Golden") then
+                                            game.Players.LocalPlayer.Character.Humanoid:EquipTool(h)
+                                            game:GetService'VirtualUser':CaptureController()
+                                            game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+                                        end
+                                    end
 
-game:GetService'VirtualUser':CaptureController()
-game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
-end
 end
 end)
 end
