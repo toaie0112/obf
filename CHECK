@@ -1,0 +1,5 @@
+if _G.Script_Mode == "Anime Dimensions Simulator" then
+loadstring(game:HttpGet('https://pastebin.com/raw/4YM8iz0Q'))()
+elseif _G.Script_Mode == "Project Slayers" then
+loadstring(game:HttpGet('https://pastebin.com/raw/pvtVxg3z'))()
+end
