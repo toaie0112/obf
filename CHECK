@@ -4,4 +4,21 @@ elseif _G.Script_Mode == "Project Slayers" then
 loadstring(game:HttpGet('https://pastebin.com/raw/pvtVxg3z'))()
 elseif  _G.Script_Mode == "One Piece Legendary" then
 loadstring(game:HttpGet('https://pastebin.com/raw/yQJPh6mw'))()
+else
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Choose Game", "DarkTheme")
+local Tab = Window:NewTab("Game")
+local Section = Tab:NewSection("Game")
+
+Section:NewButton("Anime Dimensions Simulator", "ButtonInfo", function()
+loadstring(game:HttpGet('https://pastebin.com/raw/4YM8iz0Q'))()
+end)
+
+Section:NewButton("Project Slayers", "ButtonInfo", function()
+loadstring(game:HttpGet('https://pastebin.com/raw/pvtVxg3z'))()
+end)
+
+Section:NewButton("One Piece Legendary", "ButtonInfo", function()
+loadstring(game:HttpGet('https://pastebin.com/raw/yQJPh6mw'))()
+end)
 end
